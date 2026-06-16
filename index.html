@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftTrack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CUSTOMER PAGE -->
+  <div id="customerPage">
+    <div class="header">
+      <h1>📦 SwiftTrack</h1>
+      <p>Track your package in real time</p>
+      <button onclick="showAdmin()" class="admin-btn">🔐</button>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <input type="text" id="trackingInput"
+          placeholder="Enter tracking number..."
+          class="input">
+        <button onclick="trackPackage()" class="btn">
+          🔍 Track Package
+        </button>
+      </div>
+
+      <div id="result" class="card result-card" 
+        style="display:none;">
+        <h2>📋 Package Details</h2>
+        <div class="detail-row">
+          <span>👤 Name</span>
+          <span id="cusName"></span>
+        </div>
+        <div class="detail-row">
+          <span>📦 Package</span>
+          <span id="pkgDetails"></span>
+        </div>
+        <div class="detail-row">
+          <span>📍 Location</span>
+          <span id="pkgLocation"></span>
+        </div>
+        <div class="detail-row">
+          <span>📊 Status</span>
+          <span id="pkgStatus"></span>
+        </div>
+        <div class="detail-row">
+          <span>🕒 Last Update</span>
+          <span id="lastUpdate"></span>
+        </div>
+      </div>
+
+      <div id="notFound" class="card error-card"
+        style="display:none;">
+        <p>❌ Tracking number not found.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN PAGE -->
+  <div id="adminPage" style="display:none;">
+    <div class="header">
+      <h1>⚙️ SwiftTrack Admin</h1>
+      <p>Add and manage packages</p>
+      <button onclick="showCustomer()" class="admin-btn">✖️</button>
+    </div>
+
+    <div class="container">
+
+      <!-- ADD PACKAGE -->
+      <div class="card">
+        <h2 style="margin-bottom:16px; font-size:16px;">
+          📦 Add New Package
+        </h2>
+        <input type="text" id="trackNum"
+          placeholder="Tracking Number (e.g. TRK001)"
+          class="input">
+        <input type="text" id="cusNameInput"
+          placeholder="Customer Name"
+          class="input">
+        <input type="text" id="pkgDetailsInput"
+          placeholder="Package Details"
+          class="input">
+        <input type="text" id="pkgLocationInput"
+          placeholder="Current Location"
+          class="input">
+        <select id="pkgStatusInput" class="input">
+          <option value="Pending">Pending</option>
+          <option value="In Transit">In Transit</option>
+          <option value="Delivered">Delivered</option>
+        </select>
+        <button onclick="addPackage()" class="btn">
+          ➕ Add Package
+        </button>
+      </div>
+
+      <!-- UPDATE LOCATION -->
+      <div class="card">
+        <h2 style="margin-bottom:16px; font-size:16px;">
+          📍 Update Package
+        </h2>
+        <input type="text" id="updateTrackNum"
+          placeholder="Tracking Number"
+          class="input">
+        <input type="text" id="newLocation"
+          placeholder="New Location"
+          class="input">
+        <select id="newStatus" class="input">
+          <option value="Pending">Pending</option>
+          <option value="In Transit">In Transit</option>
+          <option value="Delivered">Delivered</option>
+        </select>
+        <button onclick="updatePackage()" class="btn">
+          🔄 Update
+        </button>
+      </div>
+
+      <!-- ALL PACKAGES -->
+      <div class="card">
+        <h2 style="margin-bottom:16px; font-size:16px;">
+          📋 All Packages
+        </h2>
+        <div id="packageList"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PASSWORD MODAL -->
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <h2>🔐 Admin Access</h2>
+      <input type="password" id="passwordInput"
+        placeholder="Enter password"
+        class="input" style="margin-top:16px;">
+      <button onclick="checkPassword()" class="btn"
+        style="margin-top:12px;">
+        Enter
+      </button>
+      <button onclick="closeModal()" 
+        style="margin-top:8px; background:none; 
+        border:none; color:#888; width:100%;">
+        Cancel
+      </button>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
