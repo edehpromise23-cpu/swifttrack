@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=deivice-width, initail-scale=1.0">
+    <title>SwiftTrack — Track Your Package</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>📦 Track Your Package</h1>
+      <p>Enter your tracking number below</p
+    </div>
+    
+    <div class="container">
+      <div class="card">
+        <input
+        type="text"
+        id="trackingingInput"
+        placeholder="Enter Tracking number..."
+        class="input">
+        <button onclick="trackPackage()" class="btn"> 🔍 Track Package</button>
+      </div>
+      
+      <div id="result" class="card result-card" style="display:none;">
+        <h2>📋 Package Details</h2>
+        <div class="detail-row">
+          <span>👤 Name</span>
+          <span id="cusName"></span>
+        </div>
+        <div class="detail-row">
+        <span>📦 Package</span>
+        <span id="pkgDetails"></span>
+        </div>
+        <div class="detail-row">
+          <span>📍 Location</span>
+          <span id="pkgDetails"></span>
+        </div>
+        <div class="detail-row">
+         <span>📊 Status</span>
+         <span id="pkgDetails"></span>
+        </div>
+        <div class="detail-row">
+        <span>🕒 Last Update</span>
+        <span id="lastUpdate"></span>
+      </div>
+    </div>
+    
+    <div id="notFound" class="card error-card" style="display:none;">
+      <p>❌ Tracking number not found. Check and try again.</p>
+    </div>
+    
+      </div>
+      <script src="script.js"></script>
+  </body>
+</html>

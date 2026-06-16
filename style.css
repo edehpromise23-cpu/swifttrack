@@ -1,0 +1,153 @@
+:root {
+  --bg: #0a0a0a;
+  --card: #111111;
+  --accent: #f5a623;
+  --text: #ffffff;
+  --muted: #888888;
+  --border: rgba(255,255,255,0.08);
+  --success: #00cc66;
+  --error: #ff4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #1a1a1a, #111);
+  padding: 40px 20px 30px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* CONTAINER */
+.container {
+  padding: 20px 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* INPUT */
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+/* BUTTON */
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* RESULT CARD */
+.result-card {
+  border-left: 4px solid var(--success);
+}
+
+.result-card h2 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--success);
+}
+
+/* DETAIL ROWS */
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span:first-child {
+  color: var(--muted);
+}
+
+.detail-row span:last-child {
+  font-weight: 600;
+  text-align: right;
+  max-width: 60%;
+}
+
+/* ERROR CARD */
+.error-card {
+  border-left: 4px solid var(--error);
+  text-align: center;
+  color: var(--error);
+}
+
+/* STATUS COLORS */
+.status-pending {
+  color: var(--accent);
+}
+
+.status-transit {
+  color: #00c8ff;
+}
+
+.status-delivered {
+  color: var(--success);
+}

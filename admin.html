@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftTrack — Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>⚙️ SwiftTrack Admin</h1>
+    <p>Add and manage packages</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ADD PACKAGE FORM -->
+    <div class="card">
+      <h2 style="margin-bottom:16px; font-size:16px;">
+        📦 Add New Package
+      </h2>
+
+      <input type="text" id="trackNum" 
+        placeholder="Tracking Number (e.g. TRK001)"
+        class="input">
+
+      <input type="text" id="cusName" 
+        placeholder="Customer Name"
+        class="input">
+
+      <input type="text" id="pkgDetails" 
+        placeholder="Package Details (e.g. Shoes, Electronics)"
+        class="input">
+
+      <input type="text" id="pkgLocation" 
+        placeholder="Current Location"
+        class="input">
+
+      <select id="pkgStatus" class="input">
+        <option value="Pending">Pending</option>
+        <option value="In Transit">In Transit</option>
+        <option value="Delivered">Delivered</option>
+      </select>
+
+      <button onclick="addPackage()" class="btn">
+        ➕ Add Package
+      </button>
+    </div>
+
+    <!-- UPDATE LOCATION -->
+    <div class="card">
+      <h2 style="margin-bottom:16px; font-size:16px;">
+        📍 Update Package Location
+      </h2>
+
+      <input type="text" id="updateTrackNum"
+        placeholder="Tracking Number"
+        class="input">
+
+      <input type="text" id="newLocation"
+        placeholder="New Location"
+        class="input">
+
+      <select id="newStatus" class="input">
+        <option value="Pending">Pending</option>
+        <option value="In Transit">In Transit</option>
+        <option value="Delivered">Delivered</option>
+      </select>
+
+      <button onclick="updatePackage()" class="btn">
+        🔄 Update Location
+      </button>
+    </div>
+
+    <!-- ALL PACKAGES LIST -->
+    <div class="card">
+      <h2 style="margin-bottom:16px; font-size:16px;">
+        📋 All Packages
+      </h2>
+      <div id="packageList"></div>
+    </div>
+
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
